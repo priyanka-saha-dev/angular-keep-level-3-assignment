@@ -25,6 +25,9 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatIconModule } from '@angular/material/icon';
 import { MatCardModule } from '@angular/material/card';
 import { MatListModule } from '@angular/material/list';
+import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -38,8 +41,8 @@ import { MatListModule } from '@angular/material/list';
     NoteComponent,
     NoteTakerComponent,
     NoteViewComponent
-   ],
-  imports: [ 
+  ],
+  imports: [
     AppRoutingModule,
     HttpClientModule,
     BrowserModule,
@@ -52,16 +55,19 @@ import { MatListModule } from '@angular/material/list';
     MatExpansionModule,
     MatIconModule,
     MatCardModule,
-    MatListModule
+    MatListModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatSelectModule
   ],
-  providers: [ 
+  providers: [
     AuthenticationService,
     NotesService,
     RouterService,
     CanActivateRouteGuard
   ],
-  bootstrap: [ AppComponent ],
-  entryComponents: [ ]
+  bootstrap: [AppComponent],
+  entryComponents: []
 })
 
 export class AppModule { }

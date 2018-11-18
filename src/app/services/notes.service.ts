@@ -3,7 +3,6 @@ import { Note } from '../note';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthenticationService } from './authentication.service';
-import 'rxjs/add/operator/tap';
 import 'rxjs/add/operator/do';
 import { Observable } from 'rxjs/Observable';
 
