@@ -67,7 +67,7 @@ import { MatSelectModule } from '@angular/material/select';
     CanActivateRouteGuard
   ],
   bootstrap: [AppComponent],
-  entryComponents: []
+  entryComponents: [EditNoteViewComponent]
 })
 
 export class AppModule { }

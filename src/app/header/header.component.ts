@@ -14,11 +14,13 @@ export class HeaderComponent {
 
   }
   switchToListView() {
+    console.log('Inside switchToListView');
     this.isNoteView = false;
     this.routerSvc.routeToListView();
   }
 
   switchToNoteView() {
+    console.log('Inside switchToNoteView');
     this.isNoteView = true;
     this.routerSvc.routeToNoteView();
   }

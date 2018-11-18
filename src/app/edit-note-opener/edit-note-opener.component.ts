@@ -16,14 +16,16 @@ export class EditNoteOpenerComponent {
     private dialog: MatDialog,
     private activatedRoute: ActivatedRoute) {
 
-    const noteId = this.activatedRoute.snapshot.paramMap.get('noteId');
-
+      console.log('Inside EditNoteOpenerComponent');
+    const noteId = +this.activatedRoute.snapshot.paramMap.get('noteId');
+      console.log('noteid:',noteId);
     this.dialog.open(EditNoteViewComponent, {
       data: {
         noteId: noteId
       }
 
-    }).afterClosed().subscribe(result => {
+    })
+    .afterClosed().subscribe(result => {
       console.log('Dislog is closed');      
       this.routerService.routeBack();
     });

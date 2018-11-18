@@ -47,7 +47,7 @@ export class NoteTakerComponent implements OnInit {
       addNoteObs.subscribe(
         (response) => {
           console.log('Note added successfully');
-          this.notes.push(response);
+          //this.notes.push(response);
         },
         (err) => {
           console.log('Error in adding Note');
