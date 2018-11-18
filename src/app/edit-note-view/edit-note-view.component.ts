@@ -19,9 +19,7 @@ export class EditNoteViewComponent implements OnInit {
 
   ngOnInit() {
     const noteId = this.data['noteId'];
-    console.log('oninit of EditNoteViewComponent for:',noteId);
     this.note = this.noteService.getNoteById(noteId);
-    console.log('note is',this.note);
   }
 
   onSave() {
@@ -30,12 +28,9 @@ export class EditNoteViewComponent implements OnInit {
 
     editNoteObs.subscribe(
       (response) => {
-        console.log('Note Edit saved - closing dialog');
-        
         this.dialogRef.close();
       },
       (err) => {
-        console.log('Error in Note Edit save');
         if (err.error) {
           this.errMessage = err.error.message;
         } else {

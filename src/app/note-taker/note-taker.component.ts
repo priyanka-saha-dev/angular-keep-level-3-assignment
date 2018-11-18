@@ -25,11 +25,9 @@ export class NoteTakerComponent implements OnInit {
 
     noteObs.subscribe(
       (response) => {
-        console.log('All the notes fetched');
         this.notes = response;
       },
       (error) => {
-        console.log('Error in Getting All the notes');
         this.errMessage = error.message;
       }
     )
@@ -45,12 +43,8 @@ export class NoteTakerComponent implements OnInit {
       const addNoteObs = this.noteSvc.addNote(this.note);
 
       addNoteObs.subscribe(
-        (response) => {
-          console.log('Note added successfully');
-          //this.notes.push(response);
-        },
+        (response) => { },
         (err) => {
-          console.log('Error in adding Note');
           if (err.error) {
             this.errMessage = err.error.message;
           } else {

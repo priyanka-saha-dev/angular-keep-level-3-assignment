@@ -21,11 +21,9 @@ export class NoteViewComponent implements OnInit {
 
     noteObs.subscribe(
       (response) => {
-        console.log('All the notes fetched');
         this.notes = response;
       },
       (error) => {
-        console.log('Error in Getting All the notes');
         this.errMessage = error.message;
       }
     );

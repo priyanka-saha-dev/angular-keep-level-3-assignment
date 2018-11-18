@@ -23,7 +23,6 @@ export class LoginComponent {
       'username': this.username.value,
       'password': this.password.value,
     };
-    console.log('Login with creds : ', credentials);
 
     if (!this.username.value || !this.password.value) {
       this.submitMessage = 'Username and Passwrod required';

@@ -20,12 +20,9 @@ export class ListViewComponent implements OnInit {
 
     noteObs.subscribe(
       (response) => {
-        console.log('All the notes fetched');
-
         this.notStartedNotes = response.filter((note) => 'not-started' === note.state);
         this.startedNotes = response.filter((note) => 'started' === note.state);
         this.completedNotes = response.filter((note) => 'completed' === note.state);
-
       },
       (error) => {
         console.log('Error in Getting All the notes');

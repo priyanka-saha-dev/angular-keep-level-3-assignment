@@ -26,7 +26,6 @@ export class EditNoteOpenerComponent {
 
     })
       .afterClosed().subscribe(result => {
-        console.log('Dislog is closed');
         this.routerService.routeBack();
       });
   }

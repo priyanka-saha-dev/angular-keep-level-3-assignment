@@ -5,15 +5,12 @@ import 'rxjs/add/operator/map';
 @Injectable()
 export class AuthenticationService {
 
-  constructor(private httpClient: HttpClient) {
-    console.log('Inside constructor for AuthenticationSvc');
-  }
+  constructor(private httpClient: HttpClient) { }
 
   authenticateUser(data) {
 
     return this.httpClient.post('http://localhost:3000/auth/v1', data)
       .map(response => {
-        console.log('response recieved in authenticateuser', response);
         let token;
         if (response.hasOwnProperty('token')) {
           token = response['token'];
@@ -44,7 +41,6 @@ export class AuthenticationService {
     };
     const resp = this.httpClient.post('http://localhost:3000/auth/v1/isAuthenticated', {}, httpOptions)
       .map(response => {
-        console.log('response for isAuthenticatedUSer recieved', response);
         if (response) {
           return response['isAuthenticated'];
         }

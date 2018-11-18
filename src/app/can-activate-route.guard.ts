@@ -16,16 +16,13 @@ export class CanActivateRouteGuard implements CanActivate {
 
     const token = this.authSvc.getBearerToken();
 
-    console.log('Checking if dashboard view is possible - ', token);
     const routePromise = this.authSvc.isUserAuthenticated(token);
     routePromise.then(resp => {
-      console.log('resp in canactivate promise.then', resp);
       if (!resp) {
         this.routerSvc.routeToLogin();
       }
       return resp;
     }).catch(err => {
-      console.log('error in canactivate promise.then', err);
       this.routerSvc.routeToLogin();
       return false;
     });
