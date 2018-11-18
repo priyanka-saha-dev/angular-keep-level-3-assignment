@@ -1,0 +1,9 @@
+.keep-c-list-wrapper {
+    display: flex;
+}
+.keep-c-list-container {
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    margin: 2em;
+}

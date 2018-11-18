@@ -28,6 +28,6 @@ export class NoteViewComponent implements OnInit {
         console.log('Error in Getting All the notes');
         this.errMessage = error.message;
       }
-    )
+    );
   }
 }
