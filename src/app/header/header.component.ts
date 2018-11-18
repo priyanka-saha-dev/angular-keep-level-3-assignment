@@ -9,18 +9,13 @@ import { RouterService } from '../services/router.service';
 export class HeaderComponent {
   isNoteView = true;
 
-  constructor(private routerSvc: RouterService) {
-    console.log('Inside HeaderComponent constructor');
-
-  }
+  constructor(private routerSvc: RouterService) { }
   switchToListView() {
-    console.log('Inside switchToListView');
     this.isNoteView = false;
     this.routerSvc.routeToListView();
   }
 
   switchToNoteView() {
-    console.log('Inside switchToNoteView');
     this.isNoteView = true;
     this.routerSvc.routeToNoteView();
   }

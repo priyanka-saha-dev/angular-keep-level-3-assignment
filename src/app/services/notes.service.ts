@@ -13,7 +13,6 @@ export class NotesService {
   notesSubject: BehaviorSubject<Array<Note>>;
 
   constructor(private httpClient: HttpClient, private authSvc: AuthenticationService) {
-    console.log('Inside constructor for NotesSvc');
     this.notes = [];
     this.notesSubject = new BehaviorSubject(this.notes);
   }
@@ -66,7 +65,6 @@ export class NotesService {
     let addNoteObserver = this.httpClient.put<Note>(`http://localhost:3000/api/v1/notes/${note.id}`, note, httpOptions);
 
     return addNoteObserver.do(addedNote => {//tap ???
-      //const selectedNote = this.notes.find((current) => current.id === addedNote.id);
       this.notesSubject.next(this.notes);
     });
   }

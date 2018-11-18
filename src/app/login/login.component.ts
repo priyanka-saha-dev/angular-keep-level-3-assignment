@@ -16,9 +16,7 @@ export class LoginComponent {
   submitMessage: string;
 
   constructor(private routerSvc: RouterService,
-    private authSvc: AuthenticationService) {
-    console.log('Inside constructor of LoginComponent');
-  }
+    private authSvc: AuthenticationService) { }
 
   loginSubmit() {
     const credentials = {

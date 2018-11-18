@@ -13,9 +13,7 @@ export class ListViewComponent implements OnInit {
   startedNotes: Array<Note>;
   completedNotes: Array<Note>;
 
-  constructor(private noteSvc: NotesService) {
-    console.log('Inside constructor ListViewComponent of note ');
-  }
+  constructor(private noteSvc: NotesService) { }
 
   ngOnInit() {
     const noteObs = this.noteSvc.getNotes();

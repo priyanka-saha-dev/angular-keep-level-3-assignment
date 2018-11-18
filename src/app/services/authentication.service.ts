@@ -10,7 +10,6 @@ export class AuthenticationService {
   }
 
   authenticateUser(data) {
-    console.log('In AuthenticationSvc authenticateUser : ', data);
 
     return this.httpClient.post('http://localhost:3000/auth/v1', data)
       .map(response => {
@@ -40,7 +39,6 @@ export class AuthenticationService {
 
   isUserAuthenticated(token): Promise<boolean> {
 
-    console.log('In AuthenticationSvc isUserAuthenticated : ', token);
     const httpOptions = {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     };

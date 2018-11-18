@@ -11,9 +11,7 @@ export class NoteComponent {
 
   @Input() note : Note;
 
-  constructor(private routerSvc : RouterService) {
-    console.log('Inside NoteComponent constructor')
-  }
+  constructor(private routerSvc : RouterService) { }
 
   openNoteEditView() {
     const noteID = this.note.id;

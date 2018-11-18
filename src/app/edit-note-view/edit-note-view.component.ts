@@ -15,10 +15,7 @@ export class EditNoteViewComponent implements OnInit {
 
   constructor(private noteService: NotesService,
     private dialogRef: MatDialogRef<EditNoteViewComponent>,
-    @Inject(MAT_DIALOG_DATA) private data: any) {
-
-    console.log('Inside constructor of EditNoteViewComponent',this.data);
-  }
+    @Inject(MAT_DIALOG_DATA) private data: any) { }
 
   ngOnInit() {
     const noteId = this.data['noteId'];
