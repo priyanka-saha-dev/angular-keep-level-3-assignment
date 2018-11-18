@@ -5,7 +5,7 @@ import { Location } from '@angular/common';
 @Injectable()
 export class RouterService {
 
-  constructor(private router: Router, private location : Location) { }
+  constructor(private router: Router, private location: Location) { }
 
   routeToDashboard() {
     this.router.navigate(['dashboard']);

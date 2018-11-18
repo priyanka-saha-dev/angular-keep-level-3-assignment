@@ -30,7 +30,7 @@ export class NoteTakerComponent implements OnInit {
       (error) => {
         this.errMessage = error.message;
       }
-    )
+    );
 
   }
 

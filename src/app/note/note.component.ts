@@ -9,9 +9,9 @@ import { Note } from '../note';
 })
 export class NoteComponent {
 
-  @Input() note : Note;
+  @Input() note: Note;
 
-  constructor(private routerSvc : RouterService) { }
+  constructor(private routerSvc: RouterService) { }
 
   openNoteEditView() {
     const noteID = this.note.id;

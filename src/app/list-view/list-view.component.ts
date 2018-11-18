@@ -27,6 +27,6 @@ export class ListViewComponent implements OnInit {
       (error) => {
         console.log('Error in Getting All the notes');
       }
-    )
+    );
   }
 }

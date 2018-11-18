@@ -24,7 +24,7 @@ export class NotesService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     };
 
-    let getNoteObserver = this.httpClient.get<Array<Note>>('http://localhost:3000/api/v1/notes', httpOptions);
+    const getNoteObserver = this.httpClient.get<Array<Note>>('http://localhost:3000/api/v1/notes', httpOptions);
 
     getNoteObserver.subscribe(
       (noteList) => {
@@ -50,7 +50,7 @@ export class NotesService {
 
     let addNoteObserver = this.httpClient.post<Note>('http://localhost:3000/api/v1/notes', note, httpOptions);
 
-    return addNoteObserver.do(addedNote => {//tap ???
+    return addNoteObserver.do(addedNote => {// tap ???
       this.notes.push(addedNote);
       this.notesSubject.next(this.notes);
     });
@@ -64,7 +64,7 @@ export class NotesService {
 
     let addNoteObserver = this.httpClient.put<Note>(`http://localhost:3000/api/v1/notes/${note.id}`, note, httpOptions);
 
-    return addNoteObserver.do(addedNote => {//tap ???
+    return addNoteObserver.do(addedNote => {// tap ???
       this.notesSubject.next(this.notes);
     });
   }
