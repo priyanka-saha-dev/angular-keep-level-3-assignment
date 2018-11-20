@@ -20,12 +20,8 @@ export class NoteViewComponent implements OnInit {
     const noteObs = this.noteSvc.getNotes();
 
     noteObs.subscribe(
-      (response) => {
-        this.notes = response;
-      },
-      (error) => {
-        this.errMessage = error.message;
-      }
+      (response) => this.notes = response,
+      (error) => this.errMessage = error.message
     );
   }
 }

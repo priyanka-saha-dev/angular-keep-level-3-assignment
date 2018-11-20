@@ -7,15 +7,13 @@ import { NotesService } from '../services/notes.service';
   templateUrl: './list-view.component.html',
   styleUrls: ['./list-view.component.css']
 })
-export class ListViewComponent implements OnInit {
+export class ListViewComponent {
 
   notStartedNotes: Array<Note>;
   startedNotes: Array<Note>;
   completedNotes: Array<Note>;
 
-  constructor(private noteSvc: NotesService) { }
-
-  ngOnInit() {
+  constructor(private noteSvc: NotesService) {
     const noteObs = this.noteSvc.getNotes();
 
     noteObs.subscribe(
@@ -29,4 +27,5 @@ export class ListViewComponent implements OnInit {
       }
     );
   }
+
 }

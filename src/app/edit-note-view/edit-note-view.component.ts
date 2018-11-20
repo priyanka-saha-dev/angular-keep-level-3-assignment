@@ -8,16 +8,14 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './edit-note-view.component.html',
   styleUrls: ['./edit-note-view.component.css']
 })
-export class EditNoteViewComponent implements OnInit {
+export class EditNoteViewComponent {
   note: Note;
   states: Array<string> = ['not-started', 'started', 'completed'];
   errMessage: string;
 
   constructor(private noteService: NotesService,
     private dialogRef: MatDialogRef<EditNoteViewComponent>,
-    @Inject(MAT_DIALOG_DATA) private data: any) { }
-
-  ngOnInit() {
+    @Inject(MAT_DIALOG_DATA) private data: any) {
     const noteId = this.data['noteId'];
     this.note = this.noteService.getNoteById(noteId);
   }

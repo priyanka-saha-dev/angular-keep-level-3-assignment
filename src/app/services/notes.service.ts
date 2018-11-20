@@ -34,7 +34,7 @@ export class NotesService {
       (err) => {
         console.log('Error in fetchNotesFromServer.', err);
       }
-    )
+    );
   }
 
   getNotes(): BehaviorSubject<Array<Note>> {
@@ -48,7 +48,7 @@ export class NotesService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     };
 
-    let addNoteObserver = this.httpClient.post<Note>('http://localhost:3000/api/v1/notes', note, httpOptions);
+    const addNoteObserver = this.httpClient.post<Note>('http://localhost:3000/api/v1/notes', note, httpOptions);
 
     return addNoteObserver.do(addedNote => {// tap ???
       this.notes.push(addedNote);
@@ -62,7 +62,7 @@ export class NotesService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     };
 
-    let addNoteObserver = this.httpClient.put<Note>(`http://localhost:3000/api/v1/notes/${note.id}`, note, httpOptions);
+    const addNoteObserver = this.httpClient.put<Note>(`http://localhost:3000/api/v1/notes/${note.id}`, note, httpOptions);
 
     return addNoteObserver.do(addedNote => {// tap ???
       this.notesSubject.next(this.notes);
