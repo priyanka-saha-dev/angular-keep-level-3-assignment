@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import 'rxjs/add/operator/map';
+import { map } from 'rxjs/operators';
 
 @Injectable()
 export class AuthenticationService {
@@ -10,16 +10,7 @@ export class AuthenticationService {
   authenticateUser(data) {
 
     return this.httpClient.post('http://localhost:3000/auth/v1/', data)
-      .map(response => {
-        let token;
-        if (response.hasOwnProperty('token')) {
-          token = response['token'];
-        } else {
-          token = null;
-        }
-
-        return token;
-      });
+      .pipe(map(response => response['token']));
   }
 
   setBearerToken(token) {
@@ -40,12 +31,8 @@ export class AuthenticationService {
       headers: new HttpHeaders().set('Authorization', `Bearer ${token}`)
     };
     const resp = this.httpClient.post('http://localhost:3000/auth/v1/isAuthenticated', {}, httpOptions)
-      .map(response => {
-        if (response) {
-          return response['isAuthenticated'];
-        }
-        return false;
-      });
+      .pipe(map(response => response['isAuthenticated']));
+
     return resp.toPromise();
 
   }
