@@ -9,7 +9,7 @@ export class AuthenticationService {
 
   authenticateUser(data) {
 
-    return this.httpClient.post('http://localhost:3000/auth/v1', data)
+    return this.httpClient.post('http://localhost:3000/auth/v1/', data)
       .map(response => {
         let token;
         if (response.hasOwnProperty('token')) {
