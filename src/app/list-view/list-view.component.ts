@@ -18,7 +18,7 @@ export class ListViewComponent {
 
     noteObs.subscribe(
       (response) => {
-        this.notStartedNotes = response.filter((note) => 'not-started' === note.state);
+        ;this.notStartedNotes = response.filter((note) => 'not-started' === note.state)
         this.startedNotes = response.filter((note) => 'started' === note.state);
         this.completedNotes = response.filter((note) => 'completed' === note.state);
       },
